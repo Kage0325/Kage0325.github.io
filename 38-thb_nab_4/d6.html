@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<style>
+    ul {
+        list-style: none;
+        margin: 0;
+        background: #ffffff;
+        padding: 0;
+    }
+
+    @media (min-width: 36em) {
+        ul {
+            width: 360px;
+        }
+    }
+
+    ul li {
+        position: relative;
+    }
+
+    input {
+        -webkit-appearance: none;
+        width: 1.25rem;
+        height: 1.25rem;
+        border: 1px solid #d9d9d9;
+        border-radius: 1px;
+        vertical-align: sub;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 1rem;
+        outline: none;
+    }
+
+    input:checked {
+        background-color: #666666;
+        border-color: #666666;
+    }
+
+    input:checked+label {
+        color: #b3b3b3;
+        font-weight: 600;
+        background-color: #f7f7f7;
+    }
+
+    input:checked:focus,
+    input:checked:hover {
+        box-shadow: 0 0 0 3px #d9d9d9;
+        border-color: #666666;
+    }
+
+    input:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgdmVyc2lvbj0iMS4xIiB4PSIwcHgiIHk9IjBweCI+PHRpdGxlPmljb25fYnlfUG9zaGx5YWtvdjEwPC90aXRsZT48ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz48ZyBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZyBmaWxsPSIjZmZmZmZmIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNi4wMDAwMDAsIDI2LjAwMDAwMCkiPjxwYXRoIGQ9Ik0xNy45OTk5ODc4LDMyLjQgTDEwLjk5OTk4NzgsMjUuNCBDMTAuMjI2Nzg5MSwyNC42MjY4MDE0IDguOTczMTg2NDQsMjQuNjI2ODAxNCA4LjE5OTk4Nzc5LDI1LjQgTDguMTk5OTg3NzksMjUuNCBDNy40MjY3ODkxNCwyNi4xNzMxOTg2IDcuNDI2Nzg5MTQsMjcuNDI2ODAxNCA4LjE5OTk4Nzc5LDI4LjIgTDE2LjU4NTc3NDIsMzYuNTg1Nzg2NCBDMTcuMzY2ODIyOCwzNy4zNjY4MzUgMTguNjMzMTUyOCwzNy4zNjY4MzUgMTkuNDE0MjAxNCwzNi41ODU3ODY0IEw0MC41OTk5ODc4LDE1LjQgQzQxLjM3MzE4NjQsMTQuNjI2ODAxNCA0MS4zNzMxODY0LDEzLjM3MzE5ODYgNDAuNTk5OTg3OCwxMi42IEw0MC41OTk5ODc4LDEyLjYgQzM5LjgyNjc4OTEsMTEuODI2ODAxNCAzOC41NzMxODY0LDExLjgyNjgwMTQgMzcuNzk5OTg3OCwxMi42IEwxNy45OTk5ODc4LDMyLjQgWiI+PC9wYXRoPjwvZz48L2c+PC9nPjwvc3ZnPg==");
+        background-size: 40px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    input:focus,
+    input:hover {
+        box-shadow: 0 0 0 3px #ebebeb;
+        border-color: #8c8c8c;
+    }
+
+    label {
+        margin-left: 10px;
+        padding: 0.75rem 1rem 0.75rem calc(1.2rem * 2.25);
+        display: inline-block;
+        font-size: 17px;
+        width: 100%;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border-bottom: 2px solid #ededed;
+        cursor: pointer;
+    }
+
+    label:hover {
+        border-bottom-color: #adadad;
+    }
+
+    button {
+        color: #444444;
+        background: #F3F3F3;
+        border: 1px #DADADA solid;
+        padding: 5px 10px;
+        border-radius: 2px;
+        font-weight: bold;
+        font-size: 9pt;
+        outline: none;
+    }
+
+    button:hover {
+        border: 1px #C6C6C6 solid;
+        box-shadow: 1px 1px 1px #EAEAEA;
+        color: #333333;
+        background: #F7F7F7;
+    }
+
+    button:active {
+        box-shadow: inset 1px 1px 1px #DFDFDF;
+    }
+
+    .button {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <script>
+        let selectedAnswers = []
+        let correctAnswers = ["1", "4"]
+        var audio = document.createElement("audio");
+
+        function selectAnswer(element, selectedAnswer) {
+            if (selectedAnswers.includes(selectedAnswer))
+                selectedAnswers = selectedAnswers.filter(answer => answer !== selectedAnswer)
+            else
+                selectedAnswers = [...selectedAnswers, selectedAnswer]
+        }
+
+        function validateAnswerSelection(selectedAnswer) {
+            console.log('before' + selectedAnswers)
+
+            if (selectedAnswers.length === 2) {
+                let isCorrect = correctAnswers.every((element, index) => (element === selectedAnswers[index]))
+                if (isCorrect) {
+                    audio.src = "voice_correct.mp3"
+                    audio.addEventListener('ended', myHandler, false);
+                }
+                else {
+                    audio.src = "voice_wrong.mp3"
+                }
+            }
+            else {
+                audio.src = "voice_wrong.mp3"
+            }
+            audio.play();
+        }
+
+        $(document).ready(function () {
+
+            function playPrevAud() {
+                var audio = document.createElement("audio");
+                audio.src = "backDasgal.mp3";
+                audio.play();
+            }
+
+            function playNextAud() {
+                var audio = document.createElement("audio");
+                audio.src = "nextDasgal.mp3";
+                audio.play();
+            }
+
+            $(".prev_btn").focus(playPrevAud);
+            $(".next_btn").focus(playNextAud);
+        });
+
+        function myHandler(e) {
+            window.location.href = "ending.html"
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="base">
+            <div class="que_container">
+
+                <div class="que_text">
+                    <span class="main-link" tabindex="1">
+                        <h2>
+                            Дасгал 6: Буруу үйлдлүүдийг сонгоно уу.
+                        </h2>
+                    </span>
+                </div>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="answer" id="answer1" value="answer1" tabindex="2" data-num="1"
+                            onchange="selectAnswer(this,'1')">
+                        <label for="answer1">Хариулт 1. Хэн нэгнийг шоолж, дооглох</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="answer" id="answer2" value="answer2" tabindex="3" data-num="2"
+                            onchange="selectAnswer(this,'2')">
+                        <label for="answer2">Хариулт 2. Ангиа цэвэрлэх</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="answer" id="answer3" value="answer3" tabindex="4" data-num="3"
+                            onchange="selectAnswer(this,'3')">
+                        <label for="answer3">Хариулт 3. Хичээлдээ анхааралтай суух</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="answer" id="answer4" value="answer4" tabindex="5" data-num="4"
+                            onchange="selectAnswer(this,'4')">
+                        <label for="answer4">Хариулт 4. Бусдын эд зүйлийг зөвшөөрөлгүй авах</label>
+                    </li>
+                    <li><button class="button" tabindex="6" onclick="validateAnswerSelection()">Шалгах</button></li>
+                </ul>
+                <img class="que_image" tabindex="7" src="Mido.png" alt="Мидо цахим аяллын дүр">
+            </div>
+
+        </div>
+        <div class="footer">
+            <div class="prev">
+                <a class="prev_btn " href="d5.html">&#8249; <span style="font-size: 0;">Өмнөх дасгал</span>
+                </a>
+            </div>
+            <div class="next">
+                <a class="next_btn " href="ending.html">&#8250; <span style="font-size: 0;">Дараах дасгал</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+</body>
+
+</html>

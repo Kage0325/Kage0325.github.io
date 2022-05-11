@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            // document.getElementById("answer").onclick = validate;
+            $(".option").on("click", function () {
+                var $answer = $(this).children().attr("data-num");
+                var audio = document.createElement("audio");
+
+                if ($answer === "1") {
+                    audio.src = "voice_correct.mp3"
+                    audio.addEventListener('ended', myHandler, false);
+
+                } else {
+                    audio.src = "voice_wrong.mp3"
+                }
+                audio.play();
+                console.log($answer);
+            })
+
+            function playPrevAud() {
+                var audio = document.createElement("audio");
+                audio.src = "backDasgal.mp3";
+                audio.play();
+            }
+
+            function playNextAud() {
+                var audio = document.createElement("audio");
+                audio.src = "nextDasgal.mp3";
+                audio.play();
+            }
+            $(".prev_btn").focus(playPrevAud);
+            $(".next_btn").focus(playNextAud);
+        });
+
+        function myHandler(e) {
+            window.location.href = "d1.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="base">
+            <!-- <div class="header">
+                <span class="que_num active">1</span>
+                <span class="que_num">2</span>
+                <span class="que_num">3</span>
+                <span class="que_num">4</span>
+                <span class="que_num">5</span>
+                <span class="que_num">6</span>
+                <span class="que_num">7</span>
+                <span class="que_num">8</span>
+                <span class="que_num">9</span>
+                <span class="que_num">10</span>
+            </div> -->
+            <div class="que_container">
+
+                <div class="que_text">
+                    <span class="main-link" tabindex="1">
+                        <h3>Ийнхүү усанд ороод гэртээ ирлээ. Гэртээ ирээд хумсаа авав. Хумсаа мэрэх, хумсаа тулгаж авах,
+                            бусдын хумсны хутга хэрэглэх нь бүгд буруу гэдгийг тэр мэднэ. Тиймээс тэр хумсаа зөв аваад
+                            зөөлөн хуурайгаар ирмэг хэсгийг нь үрж дарав. Дараа нь зөөлөн үнэртэй гарын тос түрхлээ.
+                        </h3>
+                    </span>
+                </div>
+                <img class="que_image" tabindex="6" src="Kido.png" alt="Аидо цахим аяллын дүр">
+            </div>
+            <div class="footer">
+                <div class="prev">
+                    <a class="prev_btn " href="s3.html">&#8249; <span style="font-size: 0;">Өмнөх дасгал</span>
+                    </a>
+                </div>
+                <div class="next">
+                    <a class="next_btn " href="d1.html">&#8250; <span style="font-size: 0;">Дараах дасгал</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            document.getElementById('video1').addEventListener('ended', videoEnd1, false);
+            $("#playvideo").click(function () {
+                $(".main-video").css("display", "block");
+                $(".container").css("display", "none");
+                $(".main-logo").css("display", "none");
+                $("#video2").css("display", "none");
+                $("#video3").css("display", "none");
+
+                document.getElementById("video1").play();
+            });
+        });
+
+        function videoEnd1() {
+            $("#video1").css("display", "none");
+            $("#video2").css("display", "block");
+            document.getElementById('video2').addEventListener('ended', videoEnd2, false);
+            document.getElementById("video2").play();
+        }
+
+        function videoEnd2() {
+            $("#video2").css("display", "none");
+            $("#video3").css("display", "block");
+            document.getElementById('video3').addEventListener('ended', myHandler, false);
+            document.getElementById("video3").play();
+        }
+
+        function myHandler(e) {
+            window.location.href = "ending.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="base">
+            <img class="main-logo" tabindex="1" src="logo.png" alt="цахим аялал">
+            <div class="container">
+                <div class="main-title">
+                    <span class="main-link" tabindex="2">
+                        <h1 class="main-text">
+                            <span class="main-text1">
+                                Ижил бус хуваарьтай энгийн бутархай
+                            </span>
+                            <span class="main-text2">Mатематик 5 дугаар анги</span>
+                        </h1>
+                    </span>
+
+                </div>
+
+                <div class="start-div">
+                    <button class="start-btn" id="playvideo">Эхлэх</button>
+                </div>
+
+            </div>
+            <video alt="Mатематик 5 дугаар анги бичлэг 1" controls class="main-video" src="1.mp4" id="video1">
+                Mатематик 5 дугаар анги бичлэг 1
+            </video>
+            <video alt="Mатематик 5 дугаар анги бичлэг 2" controls class="main-video" src="2.mp4" id="video2">
+                Mатематик 5 дугаар анги бичлэг 2
+            </video>
+            <video alt="Mатематик 5 дугаар анги бичлэг 3" controls class="main-video" src="3.mp4" id="video3">
+                Mатематик 5 дугаар анги бичлэг 3
+            </video>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

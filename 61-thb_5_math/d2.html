@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+
+            $(".option").on("click", function () {
+                var $answer = $(this).children().attr("data-num");
+                var audio = document.createElement("audio");
+
+                if ($answer === "1") {
+                    audio.src = "voice_correct.mp3"
+                    audio.addEventListener('ended', myHandler, false);
+
+                } else {
+                    audio.src = "voice_wrong.mp3"
+                }
+                audio.play();
+                console.log($answer);
+            })
+
+            function playPrevAud() {
+                var audio = document.createElement("audio");
+                audio.src = "backDasgal.mp3";
+                audio.play();
+            }
+
+            function playNextAud() {
+                var audio = document.createElement("audio");
+                audio.src = "nextDasgal.mp3";
+                audio.play();
+            }
+
+            $(".prev_btn").focus(playPrevAud);
+            $(".next_btn").focus(playNextAud);
+        });
+
+        function myHandler(e) {
+            window.location.href = "d3.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="base">
+            <div class="que_container">
+
+                <div class="que_text">
+                    <span class="main-link" style="display: inline;" tabindex="1">
+                        <h2>Дасгал 2: Жижгээ аавынхаа өгсөн таван зуун төгрөгийн дөрвөн зуун төгрөгөөр нь дэвтэр,
+                            харандаа үзүүрлэгч авсан. Тэгвэл хэдэн төгрөг үлдсэн бэ?</h2>
+                    </span>
+                </div>
+                <div class="option_list">
+                    <div class="option">
+                        <span tabindex="2" data-num="1">Хариулт 1. Нэг зуун төгрөг</span>
+                    </div>
+                    <div class="option">
+                        <span tabindex="3" data-num="2">Хариулт 2. Хоёр зуун төгрөг</span>
+                    </div>
+                    <div class="option">
+                        <span tabindex="4" data-num="3">Хариулт 3. Гурван зуун төгрөг</span>
+                    </div>
+                    <div class="option">
+                        <span tabindex="5" data-num="4">Хариулт 4. Дөрвөн зуун төгрөг</span>
+                    </div>
+                </div>
+                <img class="que_image" tabindex="6" src="Mido.png" alt="Мидо цахим аяллын дүр">
+
+            </div>
+            <div class="footer">
+                <div class="prev">
+                    <a class="prev_btn " href="d1.html">&#8249; <span style="font-size: 0;">Өмнөх дасгал</span>
+                    </a>
+                </div>
+                <div class="next">
+                    <a class="next_btn " href="d3.html">&#8250; <span style="font-size: 0;">Дараах дасгал</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

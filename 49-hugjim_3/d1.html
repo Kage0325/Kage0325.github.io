@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            // document.getElementById("answer").onclick = validate;
+            $(".option").on("click", function () {
+                var $answer = $(this).children().attr("data-num");
+                var audio = document.createElement("audio");
+                switch ($answer) {
+                    case "1":
+                        audio.src = "huuchir.mp3"
+                        break;
+                    case "2":
+                        audio.src = "morinhuur.mp3"
+                        break;
+                    case "3":
+                        audio.src = "ihhuur.mp3"
+                        break;
+                    case "4":
+                        audio.src = "yatga.mp3"
+                        break;
+                    case "5":
+                        audio.src = "yochin.mp3"
+                        break;
+                    case "6":
+                        audio.src = "shanz.mp3"
+                        break;
+                    case "7":
+                        audio.src = "limbe.mp3"
+                        break;
+                    default:
+                        break;
+                }
+                audio.play();
+                console.log($answer);
+            })
+
+            function playPrevAud() {
+                var audio = document.createElement("audio");
+                audio.src = "backDasgal.mp3";
+                audio.play();
+            }
+
+            function playNextAud() {
+                var audio = document.createElement("audio");
+                audio.src = "nextDasgal.mp3";
+                audio.play();
+            }
+            $(".prev_btn").focus(playPrevAud);
+            $(".next_btn").focus(playNextAud);
+        });
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="base">
+            <div class="que_container">
+
+                <div class="que_text">
+                    <span class="main-link" tabindex="1">
+                        <h2>Хөгжмийн аяыг сонсоод ямар зэмсэг болохыг нэрлэж, ярилцаарай</h2>
+                    </span>
+                </div>
+                <div class="option_list">
+                    <button class="option" style="width: 170px;">
+                        <span tabindex="2" data-num="1">Хуучир</span>
+                    </button>
+                    <button class="option" style="width: 170px;">
+                        <span tabindex="3" data-num="2">Морин хуур</span>
+                    </button>
+                    <button class="option" style="width: 170px;">
+                        <span tabindex="4" data-num="3">Их хуур</span>
+                    </button>
+                    <button class="option" style="width: 170px;">
+                        <span tabindex="5" data-num="4">Ятга</span>
+                    </button>
+                    <button class="option" style="width: 170px;">
+                        <span tabindex="6" data-num="5">Ёочин</span>
+                    </button>
+                    <button class="option" style="width: 170px;">
+                        <span tabindex="7" data-num="6">Шанз</span>
+                    </button>
+                    <button class="option" style="width: 170px;">
+                        <span tabindex="8" data-num="7">Лимбэ</span>
+                    </button>
+                </div>
+                <img class="que_image" tabindex="11" src="Mido.png" alt="Мидо цахим аяллын дүр">
+            </div>
+            <div class="footer">
+                <div class="prev">
+                </div>
+                <div class="next">
+                    <a class="next_btn " href="ending.html">&#8250; <span style="font-size: 0;">Дараах дасгал</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

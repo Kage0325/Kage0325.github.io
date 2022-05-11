@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            $(".option").on("click", function () {
+                var $answer = $(this).children().attr("data-num");
+                var audio = document.createElement("audio");
+
+                if ($answer === "3") {
+                    audio.src = "voice_correct.mp3"
+                    audio.addEventListener('ended', myHandler, false);
+
+                } else {
+                    audio.src = "voice_wrong.mp3"
+                }
+                audio.play();
+                console.log($answer);
+            })
+
+            function playPrevAud() {
+                var audio = document.createElement("audio");
+                audio.src = "backDasgal.mp3";
+                audio.play();
+            }
+
+            function playNextAud() {
+                var audio = document.createElement("audio");
+                audio.src = "nextDasgal.mp3";
+                audio.play();
+            }
+
+            $(".prev_btn").focus(playPrevAud);
+            $(".next_btn").focus(playNextAud);
+        });
+
+        function myHandler(e) {
+            window.location.href = "d3.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="base">
+            <div class="que_container">
+
+                <div class="que_text">
+                    <span class="main-link" style="display: inline;" tabindex="1">
+                        <h2>Дасгал 2: Дараах үржвэрүүдийн утгыг бодож анх тэдэнд хэр хэмжээний мөнгө байсныг олоход нь
+                            туслаарай.</h2>
+                        <p>1: Долоог есөөр үржүүлбэл хэд вэ?</p>
+                        <p>2: Есийг далаар үржүүлбэл хэд вэ? </p>
+                        <p>3: Ерийг далаар үржүүлбэл хэд вэ? </p>
+                        <p>4: Есөн зууг долоогоор үржүүлбэл хэд вэ?</p>
+                        <p>5: Есөн мянгыг долоогоор үржүүлбэл хэд вэ?</p>
+                        <p>Та бүхэн утгыг олоод багшдаа эсвэл аав ээж, ах эгчдээ шалгуулаарай.</p>
+                    </span>
+                </div>
+                <img class="que_image" tabindex="6" src="Mido.png" alt="Мидо цахим аяллын дүр">
+
+            </div>
+            <div class="footer">
+                <div class="prev">
+                    <a class="prev_btn " href="d1.html">&#8249; <span style="font-size: 0;">Өмнөх дасгал</span>
+                    </a>
+                </div>
+                <div class="next">
+                    <a class="next_btn " href="d3.html">&#8250; <span style="font-size: 0;">Дараах дасгал</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

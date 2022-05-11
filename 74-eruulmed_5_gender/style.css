@@ -1,0 +1,277 @@
+html,
+body {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    font-family: Roboto;
+}
+
+.main {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+.main-logo {
+    position: absolute;
+    margin-top: 3vh;
+    width: 26vw;
+    left: 38%;
+}
+
+.base {
+    display: inline-block;
+    background-image: url("background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 100%;
+    width: 80%;
+}
+
+.container {
+    background-color: white;
+    margin: 11% 10% 0 10%;
+    border-radius: 20px;
+    min-height: 40vh;
+    padding: 2%;
+}
+
+.que_text a h2 {
+    color: #1f009b !important;
+    font-weight: 500 !important;
+    font-size: 1.6rem !important;
+}
+
+.que_container {
+    background-color: white;
+    margin: 7% 10% 0 10%;
+    border-radius: 20px;
+    min-height: 60vh;
+    padding: 2% 5% 2% 5%;
+}
+
+.main-title {
+    min-height: 30vh;
+}
+
+.main-link {
+    text-decoration: none;
+    color: black;
+}
+
+.main-video {
+    display: none;
+    object-fit: cover;
+    /* top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; */
+    width: 100%;
+    height: 100%;
+}
+
+.main-text {
+    padding: 3vh;
+    display: inline-grid;
+    width: 95%;
+    text-align: center;
+    margin-top: 6vh;
+}
+
+.main-text:hover,
+.main-text:focus {
+    border: none;
+}
+
+.main-text1 {
+    padding: 7vh 0px 9vh 0px;
+    font-size: 4vw;
+    color: #1F009B;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.main-text2 {
+    color: #1F009B;
+    border-left: 1px black solid;
+    border-right: 1px black solid;
+    width: 27vw;
+    font-weight: 400;
+    place-self: center;
+}
+
+.start-div {
+    text-align: center;
+}
+
+.start-btn {
+    font-size: large;
+    font-weight: 500;
+    color: white;
+    background-color: orange;
+    padding: 10px 50px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.start-btn:focus,
+.start-btn:hover {
+    background: rgb(252, 184, 57);
+}
+
+.prev_btn,
+.next_btn {
+    background-color: #f1f1f1;
+    color: black;
+    border-radius: 50%;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.next_btn:hover,
+.prev_btn:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.option_list {
+    width: 70%;
+    margin-top: 4%;
+    margin-left: 5%;
+}
+
+.option_list .option {
+    color: #1f009b !important;
+    font-size: 1.5rem;
+    font-weight: 300;
+    background: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.option_list .option:hover,
+.option_list .option:focus {
+    color: #004085;
+    background: orange;
+    border-color: #b8daff;
+}
+
+.que_image {
+    width: 15%;
+    position: absolute;
+    right: 19vw;
+    bottom: 24vh;
+}
+
+.header {
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+.header .que_num {
+    padding: 0.5rem;
+    background: white;
+    border-radius: 30%;
+}
+
+.header .que_num.active {
+    background: orange !important;
+}
+
+.footer {
+    width: 100%;
+    display: inline-flex;
+    margin-top: 1%;
+}
+
+.prev {
+    text-align: right;
+    margin-right: 10px;
+    width: 50%;
+}
+
+.next {
+    text-align: left;
+    margin-left: 10px;
+    width: 50%;
+}
+
+.end_header {
+    background: rgba(255, 255, 255, 0.705);
+    margin-top: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.end_header img {
+    width: 100%;
+}
+
+.end_container {
+    background-color: white;
+    margin: 5% 30% 0 30%;
+    border-radius: 20px;
+    min-height: 48vh;
+    padding: 2% 4% 2% 4%;
+}
+
+.end_img {
+    width: 16vw;
+    margin: -6vw 0 0 5.3vw;
+}
+
+.end_retry {
+    width: 40px;
+    height: 40px;
+    background: #003399;
+    border-radius: 15px;
+    padding: 0.3rem;
+    margin: auto;
+    margin-top: 1.6vw;
+    margin-bottom: -103px;
+}
+
+.end_retry img {
+    width: 100%;
+}
+
+.end-text {
+    text-align: center;
+    margin: 0;
+    font-size: 1.7vw;
+    color: #1F009B;
+    font-weight: 400;
+}
+
+.end-text span {
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+.end_footer {
+    margin-top: 14vh;
+    text-align: center;
+}
+
+.end_footer img {
+    width: 11vw;
+}

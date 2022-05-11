@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            document.getElementById('video1').addEventListener('ended', myHandler, false);
+            $("#playvideo").click(function () {
+                $(".main-video").css("display", "block");
+                $(".container").css("display", "none");
+                $(".main-logo").css("display", "none");
+
+                document.getElementById("video1").play();
+            });
+        });
+
+        function myHandler(e) {
+            window.location.href = "d1.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="base">
+            <img class="main-logo" tabindex="1" src="logo.png" alt="цахим аялал">
+            <div class="container">
+                <div class="main-title">
+                    <span class="main-link" tabindex="2">
+                        <h1 class="main-text">
+                            <span class="main-text1">
+                                үржүүлэхийн хүрдээ<br>бататгах
+                            </span>
+                            <span class="main-text2">Тусгай хэрэгцээт боловсрол математик 4 дүгээр анги</span>
+                        </h1>
+                    </span>
+
+                </div>
+
+                <div class="start-div">
+                    <button class="start-btn" id="playvideo">Эхлэх</button>
+                </div>
+
+            </div>
+            <video alt="Тусгай хэрэгцээт боловсрол математик 4 дүгээр анги" controls class="main-video"
+                src="video_1.mp4" id="video1">
+                Тусгай хэрэгцээт боловсрол математик 4 дүгээр анги
+            </video>
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

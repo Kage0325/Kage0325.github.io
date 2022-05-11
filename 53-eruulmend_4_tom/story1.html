@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            document.getElementById('video2').addEventListener('ended', myHandler, false);
+        });
+
+        function myHandler(e) {
+            window.location.href = "d3.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="base" style="position: relative;">
+            <video alt="Эрүүл мэнд 4" controls class="story-video" src="video_2.mp4" id="video2">
+                Эрүүл мэнд 4
+            </video>
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
