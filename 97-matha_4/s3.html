@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            $(".option").on("click", function () {
+                var $answer = $(this).children().attr("data-num");
+                var audio = document.createElement("audio");
+
+                if ($answer === "3") {
+                    audio.src = "voice_correct.mp3"
+                    audio.addEventListener('ended', myHandler, false);
+
+                } else {
+                    audio.src = "voice_wrong.mp3"
+                }
+                audio.play();
+                console.log($answer);
+            })
+
+            function playPrevAud() {
+                var audio = document.createElement("audio");
+                audio.src = "backDasgal.mp3";
+                audio.play();
+            }
+
+            function playNextAud() {
+                var audio = document.createElement("audio");
+                audio.src = "nextDasgal.mp3";
+                audio.play();
+            }
+
+            $(".prev_btn").focus(playPrevAud);
+            $(".next_btn").focus(playNextAud);
+        });
+
+        function myHandler(e) {
+            window.location.href = "d1.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="base">
+            <div class="que_container">
+
+                <div class="que_text">
+                    <span class="main-link" style="display: inline;" tabindex="1">
+                        <h2>
+                            Таван зуун гучин зургааг бутаргая. Тэгэхээр таван зуутаас дөрвөн зуут нь дөрвөн өдөрт нэг
+                            нэг оногдоно гэж бодвол таван зуугаас дөрв өн зууг хасахаар нэг зуут үлдэнэ. Үүн дээр гучин
+                            зургаагаа нэмэхээр нэг зуун гучин зургаа болно. Үүнийхээ нэг зуутыг аравтаар бутаргая. Арван
+                            гурван аравтаас дөрвөн өдөрт тус бүр гурван аравт буюу нийтдээ арван хоёр аравт оногдоно.
+                            Тиймээс арван гурваас арван хоёрыг хасахаар нэг аравт үлдэнэ. Үүн дээрээ зургаан нэгжээ
+                            нэмээд арван зургаа. Үүнийг аравт ба нэгжээр бутаргавал нэг аравт, зургаан нэгж болно.
+                            Үлдсэн нэг аравтыг мөн нэгжээр бутаргахад арван зургаан нэгж болно. Арван зургаан нэгжийг
+                            дөрвөн өдөрт тэнцүү хуваахад дөрөв, дөрөв оногдоно. Тиймээс таван зуун гучин зургааг дөрөвт
+                            хуваахаар нэг зуун гучин дөрөв гарах бөгөөд таван зуун гучин зургаан мянгыг дөрөвт хуваавал
+                            нэг зуун гучин дөрвөн мянга болно.
+                        </h2>
+                    </span>
+                </div>
+                <!-- <img class="que_image" tabindex="2" src="Mido.png" alt="Мидо цахим аяллын дүр"> -->
+
+            </div>
+            <div class="footer">
+                <div class="prev">
+                    <a class="prev_btn " href="s2.html">&#8249; <span style="font-size: 0;">Өмнөх дасгал</span>
+                    </a>
+                </div>
+                <div class="next">
+                    <a class="next_btn " href="d1.html">&#8250; <span style="font-size: 0;">Дараах дасгал</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

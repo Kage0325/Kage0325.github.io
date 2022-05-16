@@ -13,8 +13,8 @@
                 var $answer = $(this).children().attr("data-num");
                 var audio = document.createElement("audio");
 
-                if ($answer === "3") {
-                    audio.src = "voice_correct.mp3"
+                if ($answer === "2") {
+                    audio.src = "Giiguulegch_tailbar.mp3"
                     audio.addEventListener('ended', myHandler, false);
 
                 } else {
@@ -53,27 +53,25 @@
 
                 <div class="que_text">
                     <span class="main-link" style="display: inline;" tabindex="1">
-                        <h2>Жолооч хүүхдүүдийг хүрэх газарт нь буулгаад Та нарыг хорин таван хүний суудалтай дөрвөн
-                            жижиг автобус ирж авна шүү гэж хэлжээ. Хүүхдүүд далан зургуулаа хоёр автобусанд гучин найм,
-                            гучин наймаараа хуваагдаж суусан юм чинь дөрвөн жижиг автобусанд хэд хэдээрээ сууж болох вэ?
-                            Зөв хариултыг олоорой.</h2>
+                        <h2>
+                            Гийгүүлэгч үсгийн галт тэрэг ирлээ. <br>
+                            Дасгал 2: Гийгүүлэгч үсгүүдийг галт тэргэнд суулгаарай. Дараах хариултуудаас зөв хариултыг
+                            сонгоорой.
+                        </h2>
                     </span>
                 </div>
                 <div class="option_list">
                     <div class="option">
-                        <span tabindex="2" data-num="1">Хариулт 1. Хорин хоёр</span>
+                        <span tabindex="2" data-num="1">Хариулт 1. А, Я</span>
                     </div>
                     <div class="option">
-                        <span tabindex="3" data-num="2">Хариулт 2. Хорь </span>
+                        <span tabindex="3" data-num="2">Хариулт 2. В, З, П</span>
                     </div>
                     <div class="option">
-                        <span tabindex="4" data-num="3">Хариулт 3. Арван ес</span>
-                    </div>
-                    <div class="option">
-                        <span tabindex="5" data-num="4">Хариулт 4. Хорин нэг </span>
+                        <span tabindex="4" data-num="3">Хариулт 3. Ъ</span>
                     </div>
                 </div>
-                <img class="que_image" tabindex="6" src="Mido.png" alt="Мидо цахим аяллын дүр">
+                <img class="que_image" tabindex="5" src="Mido.png" alt="Мидо цахим аяллын дүр">
 
             </div>
             <div class="footer">

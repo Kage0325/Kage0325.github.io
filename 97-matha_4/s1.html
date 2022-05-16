@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            document.getElementById('video2').addEventListener('ended', myHandler, false);
+            $("#playvideo").click(function () {
+                $(".main-video").css("display", "block");
+                $(".container").css("display", "none");
+                $(".main-logo").css("display", "none");
+
+                document.getElementById("video2").play();
+            });
+        });
+
+        function myHandler(e) {
+            window.location.href = "s2.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="base">
+            <div class="container">
+                <span class="main-link" tabindex="1">
+                    <h2>
+                        Хоёр ундаа нийтдээ гурван мянган төгрөг болов. Гурван мянга гэдэг нь гучин зуут бөгөөд
+                        үржих үйлдлийг хувааж шалгадаг учраас гурван мянгыг хуваах нь хоёр тэнцүү нэг мянга
+                        таван зуу. Нэг мянга таван зуу чинь арван таван зуут шүү дээ. Тиймээс арван тавыг
+                        хоёроор үржүүлээд гуч буюу нэг мянга таван зууг үржих нь хоёр тэнцүү гурван мянга болсон
+                        байв. Тэгэхээр нэг ундаа нэг мянга таван зуун төгрөгийн үнэтэй байжээ.
+                    </h2>
+                </span>
+
+                <img class="que_image" tabindex="2" src="Mido.png" alt="Мидо цахим аяллын дүр">
+
+                <div class="start-div">
+                    <button class="start-btn" tabindex="3" id="playvideo">Дараах</button>
+                </div>
+
+            </div>
+            <video alt="Mатематик 4 дүгээр анги бичлэг 2" controls class="main-video" src="97-matha_4___2.mp4"
+                id="video2"> Mатематик 4 дүгээр анги бичлэг 2
+            </video>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

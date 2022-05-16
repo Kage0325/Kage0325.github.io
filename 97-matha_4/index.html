@@ -9,34 +9,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
     <script>
         $(document).ready(function () {
-            document.getElementById('video1').addEventListener('ended', videoEnd1, false);
+            document.getElementById('video1').addEventListener('ended', myHandler, false);
             $("#playvideo").click(function () {
                 $(".main-video").css("display", "block");
                 $(".container").css("display", "none");
                 $(".main-logo").css("display", "none");
-                $("#video2").css("display", "none");
-                $("#video3").css("display", "none");
 
                 document.getElementById("video1").play();
             });
         });
 
-        function videoEnd1() {
-            $("#video1").css("display", "none");
-            $("#video2").css("display", "block");
-            document.getElementById('video2').addEventListener('ended', videoEnd2, false);
-            document.getElementById("video2").play();
-        }
-
-        function videoEnd2() {
-            $("#video2").css("display", "none");
-            $("#video3").css("display", "block");
-            document.getElementById('video3').addEventListener('ended', myHandler, false);
-            document.getElementById("video3").play();
-        }
-
         function myHandler(e) {
-            window.location.href = "d1.html";
+            window.location.href = "s1.html";
         }
     </script>
 </head>
@@ -63,14 +47,8 @@
                 </div>
 
             </div>
-            <video alt="Mатематик 4 дүгээр анги бичлэг 1" controls class="main-video" src="render1.mp4" id="video1">
-                Mатематик 4 дүгээр анги бичлэг 1
-            </video>
-            <video alt="Mатематик 4 дүгээр анги бичлэг 2" controls class="main-video" src="render2.mp4" id="video2">
-                Mатематик 4 дүгээр анги бичлэг 2
-            </video>
-            <video alt="Mатематик 4 дүгээр анги бичлэг 3" controls class="main-video" src="render3.mp4" id="video3">
-                Mатематик 4 дүгээр анги бичлэг 3
+            <video alt="Mатематик 4 дүгээр анги бичлэг 1" controls class="main-video" src="97-matha_4___1.mp4"
+                id="video1"> Mатематик 4 дүгээр анги бичлэг 1
             </video>
         </div>
     </div>

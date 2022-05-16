@@ -14,8 +14,8 @@
                 var $answer = $(this).children().attr("data-num");
                 var audio = document.createElement("audio");
 
-                if ($answer === "3") {
-                    audio.src = "voice_correct.mp3"
+                if ($answer === "1") {
+                    audio.src = "Egshig_tailbar.mp3"
                     audio.addEventListener('ended', myHandler, false);
 
                 } else {
@@ -54,19 +54,22 @@
 
                 <div class="que_text">
                     <span class="main-link" tabindex="1">
-                        <h2>Аяллын автобус хоёр зуун тавин километр зам туулсан бөгөөд цагт тавин километрийн
-                            хурдтайгаар нийт хэдэн цаг явсан бэ?</h2>
+                        <h2>В, Я, З, А, Ъ, П үсгүүд галт тэрэг хүлээн зогсож байна. Эгшиг үсгийн галт тэрэг хамгийн
+                            түрүүнд ирлээ. <br>
+                            Дасгал 1: Эгшиг үсгүүдийг галт тэргэнд суулгаарай. Дараах хариултуудаас зөв хариултыг
+                            сонгоорой.
+                        </h2>
                     </span>
                 </div>
                 <div class="option_list">
                     <div class="option">
-                        <span tabindex="2" data-num="1">Хариулт 1. гурван цаг</span>
+                        <span tabindex="2" data-num="1">Хариулт 1. А, Я</span>
                     </div>
                     <div class="option">
-                        <span tabindex="3" data-num="2">Хариулт 2. хоёр цаг</span>
+                        <span tabindex="3" data-num="2">Хариулт 2. В, З, П</span>
                     </div>
                     <div class="option">
-                        <span tabindex="4" data-num="3">Хариулт 3. таван цаг</span>
+                        <span tabindex="4" data-num="3">Хариулт 3. Ъ</span>
                     </div>
                 </div>
                 <img class="que_image" tabindex="5" src="Mido.png" alt="Мидо цахим аяллын дүр">

@@ -14,7 +14,7 @@
                 var audio = document.createElement("audio");
 
                 if ($answer === "3") {
-                    audio.src = "voice_correct.mp3"
+                    audio.src = "Temdeg_tailbar.mp3"
                     audio.addEventListener('ended', myHandler, false);
 
                 } else {
@@ -41,7 +41,7 @@
         });
 
         function myHandler(e) {
-            window.location.href = "d4.html";
+            window.location.href = "ending.html";
         }
     </script>
 </head>
@@ -53,26 +53,22 @@
 
                 <div class="que_text">
                     <span class="main-link" style="display: inline;" tabindex="1">
-                        <h2>Хүүхдүүд ногооны талбайд ирцгээлээ. Тэнд нэг тонн, тавин килограмм хураасан лууван байлаа.
-                            Бүх лууванг хорин таван килограммын хэмжээтэй уутанд тэнцүү хувааж ууталж болох уу? Хэдэн
-                            уут хэрэгтэй вэ? Дараах дүгнэлтүүдийн аль нь зөв бэ?
+                        <h2>
+                            Хамгийн сүүлийн тэмдэг үсгийн галт тэрэг ирлээ. <br>
+                            Асуулт 3: Тохирох үсгийг галт тэргэнд суулгаарай.
                         </h2>
                     </span>
                 </div>
                 <div class="option_list">
                     <div class="option">
-                        <span tabindex="2" data-num="1">Хариулт 1. Нэг мянга тавь нь нэг л тэгээр төгссөн учир хорин
-                            тавд хуваагдахгүй.
+                        <span tabindex="2" data-num="1">Хариулт 1: А, Я
                         </span>
                     </div>
                     <div class="option">
-                        <span tabindex="3" data-num="2">Хариулт 2. Тавь нь хорин таваас хоёр дахин их тул хуваагдана.
-                            Гэхдээ нэг мянга тавь гэсэн тоо хорин тавд хуваагдана гэж дүгнэж болохгүй.</span>
+                        <span tabindex="3" data-num="2">Хариулт 2. В, З, П</span>
                     </div>
                     <div class="option">
-                        <span tabindex="4" data-num="3">Хариулт 3. Хорин тав нь тав ба тавын үржвэр бөгөөд нэг мянга
-                            тавийг хуваах нь тав тэнцүү хоёр зуун арав болно. Тэгээр төгссөн тоо тавд хуваагдана. Хоёр
-                            зуун арвыг хуваах нь тав тэнцүү дөчин хоёр болно.</span>
+                        <span tabindex="4" data-num="3">Хариулт 3. Ъ</span>
                     </div>
                 </div>
                 <img class="que_image" tabindex="5" src="Mido.png" alt="Мидо цахим аяллын дүр">
@@ -84,7 +80,7 @@
                     </a>
                 </div>
                 <div class="next">
-                    <a class="next_btn " href="d4.html">&#8250; <span style="font-size: 0;">Дараах дасгал</span>
+                    <a class="next_btn " href="ending.html">&#8250; <span style="font-size: 0;">Дараах дасгал</span>
                     </a>
                 </div>
 
