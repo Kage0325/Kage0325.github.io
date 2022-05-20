@@ -10,9 +10,11 @@
     <script>
         $(document).ready(function () {
             // document.getElementById("answer").onclick = validate;
-            $(".option").on("click", function () {
+            var audio = document.createElement("audio");
+            $(".option").on("click", function (e) {
                 var $answer = $(this).children().attr("data-num");
-                var audio = document.createElement("audio");
+                audio.pause()
+                audio.currentTime = 0
                 switch ($answer) {
                     case "1":
                         audio.src = "huuchir.mp3"
@@ -39,7 +41,6 @@
                         break;
                 }
                 audio.play();
-                console.log($answer);
             })
 
             function playPrevAud() {
@@ -70,6 +71,19 @@
                     </span>
                 </div>
                 <div class="option_list">
+                    <audio controls>
+                        <source src="huuchir.ogg" type="audio/ogg">
+                        <source src="huuchir.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio> <audio controls>
+                        <source src="morinhuur.ogg" type="audio/ogg">
+                        <source src="morinhuur.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio> <audio controls>
+                        <source src="ihhuur.ogg" type="audio/ogg">
+                        <source src="ihhuur.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
                     <button class="option" style="width: 170px;">
                         <span tabindex="2" data-num="1">Хуучир</span>
                     </button>

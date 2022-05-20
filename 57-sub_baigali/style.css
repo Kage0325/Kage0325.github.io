@@ -182,6 +182,13 @@ a {
     bottom: 24vh;
 }
 
+.que_image_story {
+    width: 10%;
+    position: absolute;
+    right: 20vw;
+    bottom: 20vh;
+}
+
 .header {
     margin-top: 5%;
     margin-left: 10%;
