@@ -8,6 +8,7 @@ body {
     bottom: 0;
     height: 100%;
     font-family: Roboto;
+    text-align: justify;
 }
 
 .main {
@@ -274,4 +275,11 @@ a {
 
 .end_footer img {
     width: 11vw;
+}
+
+.row-divide {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: left;
 }
