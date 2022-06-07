@@ -9,15 +9,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
     <script>
         $(document).ready(function () {
-            document.getElementById('video2').addEventListener('ended', myHandler, false);
-            $("#playvideo").click(function () {
-                $(".main-video").css("display", "block");
-                $(".container").css("display", "none");
-                $(".main-logo").css("display", "none");
+            // document.getElementById("answer").onclick = validate;
+            $(".option").on("click", function () {
+                var $answer = $(this).children().attr("data-num");
+                var audio = document.createElement("audio");
 
-                document.getElementById("video2").play();
-            });
+                if ($answer === "1") {
+                    audio.src = "nextDasgal.mp3"
+                    audio.addEventListener('ended', audioEnd, false);
+
+                } else {
+                    audio.src = "Wrong.mp3"
+                }
+                audio.play();
+                console.log($answer);
+            })
+
+            function playPrevAud() {
+                var audio = document.createElement("audio");
+                audio.src = "backDasgal.mp3";
+                audio.play();
+            }
+
+            function playNextAud() {
+                var audio = document.createElement("audio");
+                audio.src = "nextDasgal.mp3";
+                audio.play();
+            }
+            $(".prev_btn").focus(playPrevAud);
+            $(".next_btn").focus(playNextAud);
         });
+
+        function audioEnd(e) {
+            $(".main-video").css("display", "block");
+            $(".que_container").css("display", "none");
+            $(".footer").css("display", "none");
+            document.getElementById('video2').addEventListener('ended', myHandler, false);
+            document.getElementById("video2").play();
+        }
 
         function myHandler(e) {
             window.location.href = "s2.html";
@@ -28,20 +57,33 @@
 <body>
     <div class="main">
         <div class="base">
-            <div class="container">
-                <span class="main-link" tabindex="1">
-                    <h2>
-                        Бид монгол хэлний яруу тансаг үгсээр бичигдсэн шүлэг найраглалуудыг сайтар ойлгох нь эх хэлээрээ
-                        алдаагүй зөв бичихийн үндэс юм. Одоо та бүхэн зохиолч Дашдоржийн Нацагдоржийн “Дөрвөн цаг”
-                        шүлгийн хэсэгтэй танилцаад дасгал даалгавруудыг гүйцэтгээрэй.
-                    </h2>
-                </span>
+            <div class="que_container">
 
-                <img class="que_image_story" tabindex="2" src="Kido.png" alt="Мидо цахим аяллын дүр">
-
-                <div class="start-div">
-                    <button class="start-btn" tabindex="3" id="playvideo">Дараах</button>
+                <div class="que_text">
+                    <span class="main-link" tabindex="1">
+                        <h2>
+                            Бид монгол хэлний яруу тансаг үгсээр бичигдсэн шүлэг найраглалуудыг сайтар ойлгох нь эх
+                            хэлээрээ алдаагүй зөв бичихийн үндэс юм. Одоо та бүхэн зохиолч Дашдоржийн Нацагдоржийн
+                            “Дөрвөн цаг” шүлгийн хэсэгтэй танилцаад дасгал даалгавруудыг гүйцэтгээрэй.
+                        </h2>
+                    </span>
                 </div>
+
+                <img class="que_image" tabindex="3" src="Mido.png" alt="Мидо цахим аяллын дүр">
+
+            </div>
+            <div class="footer">
+                <div class="prev">
+                </div>
+                <div class="next">
+                    <div class="option">
+                        <span tabindex="2" data-num="1" style="cursor: pointer;">
+                            <a class="next_btn ">&#8250; <span style="font-size: 0;">Дараах дасгал</span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+
 
             </div>
             <video alt="Монгол хэл 5 дугаар анги бичлэг 2" controls class="main-video" src="99-5 Mongol hel 2.mp4"
@@ -49,7 +91,6 @@
             </video>
         </div>
     </div>
-
 
 
 </body>

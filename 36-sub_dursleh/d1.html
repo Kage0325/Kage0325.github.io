@@ -133,9 +133,11 @@
         }
 
         function validateAnswerSelection(selectedAnswer) {
-            console.log('before' + selectedAnswers)
 
+            selectedAnswers = selectedAnswers.sort()
+            console.log(selectedAnswers, correctAnswers)
             if (selectedAnswers.length === 2) {
+
                 let isCorrect = correctAnswers.every((element, index) => (element === selectedAnswers[index]))
                 if (isCorrect) {
                     audio.src = "voice_correct.mp3"
@@ -188,22 +190,22 @@
                 <div class="option_list">
                     <ul>
                         <li>
-                            <input type="checkbox" name="answer" id="answer1" value="answer1" tabindex="2" data-num="1"
+                            <input type="checkbox" autocomplete="off" name="answer" id="answer1" value="answer1" tabindex="2" data-num="1"
                                 onchange="selectAnswer(this,'1')">
                             <label for="answer1">Хариулт 1. Усан будаг</label>
                         </li>
                         <li>
-                            <input type="checkbox" name="answer" id="answer2" value="answer2" tabindex="3" data-num="2"
+                            <input type="checkbox" autocomplete="off" name="answer" id="answer2" value="answer2" tabindex="3" data-num="2"
                                 onchange="selectAnswer(this,'2')">
                             <label for="answer2">Хариулт 2. Баримлын шавар</label>
                         </li>
                         <li>
-                            <input type="checkbox" name="answer" id="answer3" value="answer3" tabindex="3" data-num="3"
+                            <input type="checkbox" autocomplete="off" name="answer" id="answer3" value="answer3" tabindex="3" data-num="3"
                                 onchange="selectAnswer(this,'3')">
                             <label for="answer3">Хариулт 3. Мод</label>
                         </li>
                         <li>
-                            <input type="checkbox" name="answer" id="answer4" value="answer4" tabindex="4" data-num="4"
+                            <input type="checkbox" autocomplete="off" name="answer" id="answer4" value="answer4" tabindex="4" data-num="4"
                                 onchange="selectAnswer(this,'4')">
                             <label for="answer4">Хариулт 4. Баримлын багаж</label>
                         </li>
