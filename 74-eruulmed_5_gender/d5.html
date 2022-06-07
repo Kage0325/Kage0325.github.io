@@ -17,6 +17,7 @@
 
     ul li {
         position: relative;
+        margin: 10px;
     }
 
     input {
@@ -40,7 +41,6 @@
 
     input:checked+label {
         color: #b3b3b3;
-        font-weight: 600;
         background-color: #f7f7f7;
     }
 
@@ -73,45 +73,16 @@
         margin-left: 10px;
         padding: 0.75rem 1rem 0.75rem calc(1.2rem * 2.25);
         display: inline-block;
-        font-size: 17px;
+        font-size: 20px;
         width: 100%;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        border-bottom: 2px solid #ededed;
+        color: #1f009b !important;
+        border: 1px solid black;
+        border-radius: 5px;
         cursor: pointer;
-    }
-
-    label:hover {
-        border-bottom-color: #adadad;
-    }
-
-    button {
-        color: #444444;
-        background: #F3F3F3;
-        border: 1px #DADADA solid;
-        padding: 5px 10px;
-        border-radius: 2px;
-        font-weight: bold;
-        font-size: 9pt;
-        outline: none;
-    }
-
-    button:hover {
-        border: 1px #C6C6C6 solid;
-        box-shadow: 1px 1px 1px #EAEAEA;
-        color: #333333;
-        background: #F7F7F7;
-    }
-
-    button:active {
-        box-shadow: inset 1px 1px 1px #DFDFDF;
-    }
-
-    .button {
-        margin-top: 20px;
-        margin-left: 20px;
     }
 </style>
 
@@ -134,8 +105,8 @@
         }
 
         function validateAnswerSelection(selectedAnswer) {
-            console.log('before' + selectedAnswers)
 
+            selectedAnswers = selectedAnswers.sort()
             if (selectedAnswers.length === 2) {
                 let isCorrect = correctAnswers.every((element, index) => (element === selectedAnswers[index]))
                 if (isCorrect) {
@@ -188,27 +159,29 @@
                 </div>
                 <ul>
                     <li>
-                        <input type="checkbox" name="answer" id="answer1" value="answer1" tabindex="2" data-num="1"
-                            onchange="selectAnswer(this,'1')">
+                        <input type="checkbox" autocomplete="off" name="answer" id="answer1" value="answer1"
+                            tabindex="2" data-num="1" onchange="selectAnswer(this,'1')">
                         <label for="answer1">Хариулт 1. Хүүхэд төрүүлэх</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="answer" id="answer2" value="answer2" tabindex="3" data-num="2"
-                            onchange="selectAnswer(this,'2')">
+                        <input type="checkbox" autocomplete="off" name="answer" id="answer2" value="answer2"
+                            tabindex="3" data-num="2" onchange="selectAnswer(this,'2')">
                         <label for="answer2">Хариулт 2. Хүүхдээ асрах</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="answer" id="answer3" value="answer3" tabindex="4" data-num="3"
-                            onchange="selectAnswer(this,'3')">
+                        <input type="checkbox" autocomplete="off" name="answer" id="answer3" value="answer3"
+                            tabindex="4" data-num="3" onchange="selectAnswer(this,'3')">
                         <label for="answer3">Хариулт 3. Хүүхдээ хөхүүлэх</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="answer" id="answer4" value="answer4" tabindex="5" data-num="4"
-                            onchange="selectAnswer(this,'4')">
+                        <input type="checkbox" autocomplete="off" name="answer" id="answer4" value="answer4"
+                            tabindex="5" data-num="4" onchange="selectAnswer(this,'4')">
                         <label for="answer4">Хариулт 4. Хүүхдээ өсгөх</label>
                     </li>
-                    <li><button class="button" tabindex="6" onclick="validateAnswerSelection()">Шалгах</button></li>
                 </ul>
+                <div class="start-div">
+                    <button class="start-btn" tabindex="5" onclick="validateAnswerSelection()">Шалгах</button>
+                </div>
                 <img class="que_image" tabindex="7" src="Bido.png" alt="Бидо цахим аяллын дүр">
 
             </div>
